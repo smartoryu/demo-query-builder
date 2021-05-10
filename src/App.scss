@@ -1,0 +1,225 @@
+@import "~antd/dist/antd.css";
+
+.App {
+  // text-align: center;
+  background-color: #282c34;
+
+  .App-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+
+    .awesome-query-builder {
+      /* background-color: #fff; */
+      width: 90%;
+
+      .query-builder-container {
+        .query-builder {
+          .group-container {
+            .group {
+              background-color: #fff;
+
+              .group--header {
+                .group--conjunctions {
+                  display: flex;
+                  flex-flow: row nowrap;
+                  align-items: center;
+                  justify-content: center;
+
+                  > div > button {
+                    padding: 6px 8px;
+                    line-height: inherit;
+                    min-width: 50px;
+                    // text-transform: uppercase;
+                    height: auto;
+                  }
+
+                  > span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  }
+                }
+                .group--actions {
+                  > div > button {
+                    padding: 6px 8px;
+                    line-height: inherit;
+                    height: auto;
+                    width: auto;
+
+                    &.action--DELETE {
+                      margin-top: 0;
+                    }
+                  }
+                }
+              }
+
+              .group--children {
+                .rule-container {
+                  .rule {
+                    background-color: #f8f8f8;
+                    border: 1px solid #e1e1e1;
+                    border-radius: 0;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+
+                    .rule--body--wrapper {
+                      .rule--body {
+                        .rule--field,
+                        .rule--operator,
+                        .rule--value {
+                          margin: 4px 0 4px 10px;
+
+                          .ant-select {
+                            .ant-select-selector {
+                              min-height: 32px;
+                              display: flex;
+                              flex-flow: row nowrap;
+                              align-items: center;
+                              .ant-select-selection-search {
+                                display: flex;
+                                flex-flow: row nowrap;
+                                align-items: center;
+                              }
+                            }
+                          }
+                        }
+
+                        .rule--value {
+                          .widget--widget {
+                            margin-left: 0;
+                          }
+
+                          .rule--widget {
+                            input {
+                              min-height: 32px;
+                            }
+
+                            .ant-col {
+                              align-items: center;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .query-builder-result {
+        width: 100%;
+        div {
+          pre {
+            white-space: pre-line;
+          }
+        }
+      }
+    }
+
+    .aani-query-builder {
+      background-color: #282c34;
+
+      padding: 24px;
+      margin: 24px;
+      border: 1px solid #000;
+
+      button {
+        padding: 6px 10px;
+        background-color: #f8f8f8;
+        border: none;
+        border-radius: 0;
+        color: #000;
+        font-weight: 500;
+
+        &:hover {
+          cursor: pointer;
+          user-select: none;
+          background-color: #e1e1e1;
+          &:disabled {
+            background-color: #f8f8f8;
+          }
+          &.active {
+            background-color: #0078d6;
+          }
+        }
+
+        &.active {
+          background-color: #0078d6;
+          color: #fff;
+        }
+
+        &:active {
+          background-color: #ccc;
+        }
+        &:focus {
+          outline: none;
+          border: none;
+        }
+      }
+
+      .ruleGroup > .rule::before,
+      .ruleGroup > .rule::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 24px;
+        // height: calc(50% + 8px);
+        // height: 50%;
+        border-color: #ccc;
+        border-style: solid;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .ruleGroup {
+        margin-top: 1rem;
+
+        padding: 1rem;
+        border: 1px solid #fff;
+        border-radius: 4px;
+
+        .ruleGroup-header {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          z-index: 10;
+        }
+
+        .rule {
+          margin-left: 24px;
+          position: relative;
+          z-index: 0;
+
+          &::after {
+            z-index: 0;
+            top: 50%;
+            border-width: 0 0 0 2px;
+          }
+          &::before {
+            z-index: 0;
+            top: -12px;
+            // height: calc(50% + 14px);
+            height: 35px;
+            border-width: 0 0 2px 2px;
+          }
+
+          select {
+            min-height: 30px;
+          }
+          input {
+            min-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
